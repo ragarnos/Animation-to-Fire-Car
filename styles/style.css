@@ -1,0 +1,98 @@
+* {
+   box-sizing: border-box;
+}
+
+body {
+   margin: 0;
+   padding: 0;
+}
+
+.container {
+   position: relative;
+   width: 100%;
+   height: 150px;
+   top: 400px;
+   margin: 0 auto;
+}
+
+.wrap {
+   position: absolute;
+   width: 300px;
+   height: 150px;
+   left: 0;
+   transform: scale(-1, 1);
+   animation: car 10s infinite;
+}
+
+.car {
+   position: absolute;
+   left: 0;
+   top: 0;
+}
+
+.wheel_back {
+   right: 43px;
+}
+
+.wheel_front {
+   right: 232px;
+}
+
+.wheels {
+   position: absolute;
+   top: 48%;
+   animation: wheel 1s linear infinite;
+}
+
+.Siren {
+   display: flex;
+   position: absolute;
+   top: -10px;
+   left: 63px;
+}
+
+.Siren__red,
+.Siren__blue {
+   width: 15px;
+   height: 15px;
+   border-top-right-radius: 6px;
+   border-top-left-radius: 6px;
+}
+
+.Siren__red {
+   background-color: red;
+   animation: Siren-red .4s infinite;
+}
+
+.Siren__blue {
+   background-color: blue;
+   animation: Siren-blue .4s infinite;
+}
+
+@keyframes car {
+   0% {left: 0;}
+
+   30% {transform: scale(-1, 1);}
+
+   40% {left: 85%; transform: scale(1, 1);}
+
+   90% {transform: scale(1, 1);}
+
+   100% {left: 0;}
+}
+
+@keyframes wheel {
+
+   from {transform: rotate(0deg);}
+   to {transform: rotate(-360deg);}
+}
+
+@keyframes Siren-blue {
+   from {background-color: blue;}
+   to {background-color: red;}
+}
+
+@keyframes Siren-red {
+   from {background-color: red;}
+   to {background-color: blue;}
+}
